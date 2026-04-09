@@ -1,0 +1,22 @@
+    <h2 style="background-color: rgb(69, 129, 162);padding: 10px; padding-left: 10px; color: white; border-radius: 5px;">{{date_today}} - Report</h2>
+    <div style="background-color: rgb(183, 223, 245); padding-bottom: 4px; border-radius: 5px">
+        <h4 style="background-color: rgb(69, 129, 162);padding: 10px;color: white; border-top-left-radius: 5px; border-top-right-radius: 5px;">Today</h4>
+        <div style="padding-left: 10px; border-radius: 5px">
+            <p><strong>Expenses : </strong>{{number_today}}</p>
+            <p><strong>Amount :</strong> {{total_today}} {{html_currency}}</p>
+            <p><strong>Highest :</strong> {{highest_today}} {{html_currency}}</p>
+            <p><strong>Lowest :</strong> {{lowest_today}} {{html_currency}}</p>
+        </div>
+    </div>
+
+    <div style="background-color: rgb(183, 223, 245); padding-bottom: 4px; border-radius: 5px">
+    <h4 style="background-color: rgb(69, 129, 162); padding: 10px; color: white; border-top-left-radius: 5px; border-top-right-radius: 5px;">Total</h4>
+        <div style="padding-left: 10px; border-radius: 5px">
+            <p><strong>Expenses :</strong> {{number_alltime}}</p>
+            <p><strong>Amount : </strong>{{total_alltime}} {{html_currency}}</p>
+            <p><strong>Categories :</strong> {{categories}}</p>
+            <p><strong>Most frequent category :</strong> {{most_cat}}</p>
+            <p><strong>Highest expense :</strong> {{highest_alltime}} {{html_currency}}</p>
+            <p><strong>Lowest expense : </strong>{{lowest_alltime}} {{html_currency}}</p>
+        </div>
+    </div>
