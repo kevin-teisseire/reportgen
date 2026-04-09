@@ -1,3 +1,5 @@
+![Tests](https://github.com/kevin-teisseire/reportgen/actions/workflows/tests.yml/badge.svg)
+
 # ReportGen - Report generator
 
 Add your expenses and generate a report sent to your email address.
@@ -37,3 +39,14 @@ python3 main.py send
 ## Options
 
 For all available options : python3 main.py --help
+
+## Tests
+
+This project uses 'unittest' framework to grant fiability to the data analyses.
+
+### Run tests localy 
+To run the tests, please ensure to have installed all dependecies, then run:
+
+````bash
+python -m unittest discover -s  tests
+
