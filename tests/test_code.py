@@ -6,18 +6,19 @@ class TestAnalyse(unittest.TestCase):
     """Tests unitaires"""
     def setUp(self):
         # Initialise clean config
-        self.config = {
+        self.cleanConfig = {
             "email": "test@test.com",
             "password": "test_pass",
             "recipient": "recipient@gmail.com",
             "currency": "€"
         }
         self.folder = os.path.dirname(__file__)
-        self.jsonF = os.path.join(self.folder, 'test_config.json')
-        with open(self.jsonF, 'w') as f:
-            json.dump(self.config, f, ensure_ascii=False)
+        self.configFile = os.path.join(self.folder, 'test_config.json')
+        self.dataFile = os.path.join(self.folder, 'test_data.csv')
+        with open(self.configFile, 'w') as f:
+            json.dump(self.cleanConfig, f, ensure_ascii=False)
         # Create object Analyse
-        self.a = Analyse("test_data.csv", self.config)
+        self.a = Analyse(self.dataFile, self.cleanConfig)
         # Unpack tuples in variables
         self.exp_total_alltime, self.exp_total_today = self.a.total_expenses()
         self.n_exp_alltime, self.n_exp_today = self.a.n_expenses()
@@ -56,16 +57,16 @@ class TestAnalyse(unittest.TestCase):
         self.assertEqual(self.most_used, 'Loisirs')
       
     def test_set_param_currency(self):
-        self.a.set_param('$', None, 'test_config.json')
-        with open(self.jsonF, 'r') as f:
-            self.config = json.load(f)
-        self.assertEqual(self.config['currency'], '$')
+        self.a.set_param('$', None, self.configFile)
+        with open(self.configFile, 'r') as f:
+            self.testConfig = json.load(f)
+        self.assertEqual(self.testConfig['currency'], '$')
 
     def test_set_param_email(self):
-        self.a.set_param(None, 'test@test.com', 'test_config.json')
-        with open(self.jsonF, 'r') as f:
-            self.config = json.load(f)
-        self.assertEqual(self.config['recipient'], 'test@test.com')
+        self.a.set_param(None, 'test@test.com', self.configFile)
+        with open(self.configFile, 'r') as f:
+            self.testConfig = json.load(f)
+        self.assertEqual(self.testConfig['recipient'], 'test@test.com')
 
 if __name__ == '__main__':
     unittest.main()
