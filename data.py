@@ -117,7 +117,7 @@ class Analyse():
             with open(self.filePath, 'a') as f:
                 writer = DictWriter(f, fieldnames=['date', 'category', 'description', 'value'])
                 writer.writerow({'date': date_v, 'category': cat.capitalize(), 'description': desc.capitalize(), 'value': val})
-            print(f'{desc} - {value} {self.config['currency']} : Added to the list.' )
+            print(f"{desc} - {value} {self.config['currency']} : Added to the list.")
     
     def set_param(self, currency, recipient, file):
         "Change the recipient and the currency"
