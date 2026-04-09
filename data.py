@@ -147,7 +147,7 @@ class Analyse():
     def list_exp(self):
         for el in self.data:
             el = list(el.values())
-            print(f'{el[0]} : {el[1]} - {el[2]} - {el[3]} {self.config['currency']}')
+            print(f"{el[0]} : {el[1]} - {el[2]} - {el[3]} {self.config['currency']}")
                 
 
 
